@@ -50,7 +50,6 @@ export const App = () => {
   const loadMore = () => {
     setPage(prev => prev + 1);
   };
-  console.log('images', images);
   return (
     <>
       <Searchbar onSubmit={onSubmit} />
