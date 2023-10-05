@@ -9,21 +9,12 @@ export const Modal = ({ src, alt, toggleModal }) => {
   );
 
   useEffect(() => {
-    const eventListener = e => handleKeyEsc(e); // Передаємо об'єкт події 'e' у функцію handleKeyEsc
-    document.addEventListener('keydown', eventListener);
+    document.addEventListener('keydown', handleKeyEsc);
 
     return () => {
-      document.removeEventListener('keydown', eventListener);
+      document.removeEventListener('keydown', handleKeyEsc);
     };
   }, [handleKeyEsc]);
-
-  // useEffect(() => {
-  //   document.addEventListener('keydown', handleKeyEsc);
-  // }, [handleKeyEsc]);
-
-  // useEffect(() => {
-  //   return document.removeEventListener('keydown', handleKeyEsc);
-  // }, [handleKeyEsc]);
 
   return (
     <div className="Overlay">

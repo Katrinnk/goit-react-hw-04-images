@@ -45,7 +45,8 @@ export const App = () => {
 
   useEffect(() => {
     searchQuery && fetchImages();
-  }, [searchQuery, page, fetchImages]);
+  }, [searchQuery, fetchImages]);
+  // Реакт не дозволяє забрати із залежностей searchQuery
 
   const loadMore = () => {
     setPage(prev => prev + 1);
